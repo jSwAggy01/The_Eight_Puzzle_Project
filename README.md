@@ -1,1 +1,1 @@
-# cs-projects
+# Project 1 - The Eight Puzzle
