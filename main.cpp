@@ -1,31 +1,31 @@
 #include <iostream>
 #include <vector>
+#include "EightPuzzle.h"
+// Compile with: g++ EightPuzzle.cpp main.cpp -o ./a.exe
 
 using namespace std;
 
 int main() {
 
-/* State representation will be a vector */
+    cout << "\nBeginning tests...\n\n";
+    {
+        cout << "Testing default constructor\n";
+        EightPuzzle example1;
+        cout << "Testing output function\n";
+        example1.outputCurrentState();
+        cout << "\n\nTesting puzzle status\n";
+        example1.outputCurrentStateStatus();
 
-vector<int> eightPuzzle(9);
+        cout << "\nTesting initialized constructor\n";
+        vector<int> vect1{1,2,3,4,0,6,7,8,5};
+        EightPuzzle example2(vect1);
+        cout << "Testing output function\n";
+        example2.outputCurrentState();
+        cout << "\n\nTesting puzzle status\n";
+        example2.outputCurrentStateStatus();
+    }
 
-/* Initial states will be arbitrary */
+    cout << "\n\n...end of tests\n";
 
-/* Goal state will be a vector s.t. <1,2,3,4,5,6,7,8,0> is the final solution
-   Think of <a11,a12,a13,a21,a22,a23,a31,a32,a33> as being represented by a 3x3 matrix 
-
-        a11 a12 a13             1   2   3
-        a21 a22 a23     =>      4   5   6
-        a31 a32 a33             7   8   0
-
-   **Rememeber that the indices go from (0-8) for a 3x3 puzzle
-*/
-
-/* The operators will be to move 0:
-        - Left
-        - Right
-        - Up
-        - Down 
-*/
     return 0;
 }

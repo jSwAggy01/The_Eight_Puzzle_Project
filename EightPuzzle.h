@@ -24,20 +24,17 @@ class EightPuzzle {
         void move_right();
         void move_up();
         void move_down();
+
+    /* Output current state */
+        void outputCurrentState();
+    /* Output whether current state is goal state */
+        void outputCurrentStateStatus();
+    /* Public helper function that will check whether current state is goal state */
+        bool isGoalState();
     private:
     /* Private helper function that returns the location of 0 */
         int getZeroPosition();
+    
 };
-
-// class TreeNode {
-//     public:
-//         int count;
-//         string key;
-//         TreeNode *left;
-//         TreeNode *right;
-//         TreeNode *parent;
-//         TreeNode(int count, string key) : count(count), key(key), left(nullptr), right(nullptr), parent(nullptr) {}
-//         bool isLeaf();
-// };
 
 #endif

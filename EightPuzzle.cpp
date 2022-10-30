@@ -57,7 +57,41 @@
         }
     }
 
-/* Helper function that returns location of 0 */
+/* Prints the current state in 3x3 representation */
+    void EightPuzzle::outputCurrentState() {
+        for (int i = 0; i < currentState.size(); ++i) {
+            int j = i;
+
+            if (j % 3 == 0) {
+                j = 0;
+                cout << endl;
+            }
+
+            cout << currentState.at(i) << " ";
+        }
+    }
+
+/* Prints whether current state is goal state */
+    void EightPuzzle::outputCurrentStateStatus() {
+        if (isGoalState()) {
+            cout << "\n***SOLVED***\n";
+        }
+        else {
+            cout << "\n***NOT SOLVED***\n";
+        }
+    }
+
+/* Public helper function that will check whether current state is goal state */
+    bool EightPuzzle::isGoalState() {
+        for (int i = 0; i < currentState.size() - 1; ++i) {
+            if (currentState.at(i) != i + 1) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+/* Private helper function that returns location of 0 */
     int EightPuzzle::getZeroPosition() {
         for (int i = 0; i < currentState.size(); ++i) {
             if (currentState.at(i) == 0) {
