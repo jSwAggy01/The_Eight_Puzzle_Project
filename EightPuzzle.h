@@ -29,6 +29,7 @@ class EightPuzzle {
         void outputCurrentState();
     /* Output whether current state is goal state */
         void outputCurrentStateStatus();
+        
     /* Public helper function that will check whether current state is goal state */
         bool isGoalState();
     private:

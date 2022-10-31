@@ -7,25 +7,53 @@ using namespace std;
 
 int main() {
 
-    cout << "\nBeginning tests...\n\n";
-    {
-        cout << "Testing default constructor\n";
-        EightPuzzle example1;
-        cout << "Testing output function\n";
-        example1.outputCurrentState();
-        cout << "\n\nTesting puzzle status\n";
-        example1.outputCurrentStateStatus();
+    cout << "\nBEGINNING TESTS...\n\n";
 
-        cout << "\nTesting initialized constructor\n";
-        vector<int> vect1{1,2,3,4,0,6,7,8,5};
+    cout << "Testing constructors, output function, puzzle status, and operators\n\n";
+    {
+        cout << "EXAMPLE #1:\n";
+        cout << "Calling default constructor\n";
+        EightPuzzle example1;
+        cout << "Calling output function\n";
+        example1.outputCurrentState();
+        cout << "Calling puzzle status\n";
+        example1.outputCurrentStateStatus();
+        cout << "Move right\n";
+        example1.move_right(); // Should output invalid move
+        cout << "Calling output function\n";
+        example1.outputCurrentState();
+        cout << "Move left\n";
+        example1.move_left();
+        cout << "Calling output function\n";
+        example1.outputCurrentState();
+        cout << "Move down\n";
+        example1.move_down(); // Should output invalid move
+        cout << "Calling output function\n";
+        example1.outputCurrentState();
+        cout << "Move up\n";
+        example1.move_up();
+        cout << "Calling output function\n";
+        example1.outputCurrentState();
+        cout << "Calling puzzle status\n";
+        example1.outputCurrentStateStatus();
+        
+        cout << "EXAMPLE #2:\n";
+        cout << "Initializing constructor with vector\n";
+        vector<int> vect1{1,2,3,4,5,0,7,8,6};
         EightPuzzle example2(vect1);
-        cout << "Testing output function\n";
+        cout << "Calling output function\n";
         example2.outputCurrentState();
-        cout << "\n\nTesting puzzle status\n";
+        cout << "Calling puzzle status\n";
+        example2.outputCurrentStateStatus();
+        cout << "Move down\n";
+        example2.move_down();
+        cout << "Calling output function\n";
+        example2.outputCurrentState();
+        cout << "Calling puzzle status\n";
         example2.outputCurrentStateStatus();
     }
 
-    cout << "\n\n...end of tests\n";
+    cout << "...END OF TESTS\n";
 
     return 0;
 }

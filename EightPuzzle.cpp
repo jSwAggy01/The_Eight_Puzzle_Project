@@ -14,46 +14,58 @@
 
 /* Operators: */
     void EightPuzzle::move_left() {
-        if (getZeroPosition() == 0 || getZeroPosition() == 3 || getZeroPosition() == 7) {
-            cout << "Invalid move\n\n";
+        int zeroPosition = getZeroPosition();
+
+        if (zeroPosition == 0 || zeroPosition == 3 || zeroPosition == 7) {
+            cout << "**Invalid move**\n\n";
         }
         else {
-            int temp = currentState.at(getZeroPosition());
-            currentState.at(getZeroPosition()) = currentState.at(getZeroPosition() - 1);
-            currentState.at(getZeroPosition() - 1) = temp;
+            int zeroFormerPosition = getZeroPosition();
+            int temp = currentState.at(zeroFormerPosition);
+            currentState.at(zeroFormerPosition) = currentState.at(zeroFormerPosition - 1);
+            currentState.at(zeroFormerPosition - 1) = temp;
         }
     }
 
     void EightPuzzle::move_right() {
-        if (getZeroPosition() == 2 || getZeroPosition() == 5 || getZeroPosition() == 8) {
-            cout << "Invalid move\n\n";
+        int zeroPosition = getZeroPosition();
+
+        if (zeroPosition == 2 || zeroPosition == 5 || zeroPosition == 8) {
+            cout << "**Invalid move**\n\n";
         }
         else {
-            int temp = currentState.at(getZeroPosition());
-            currentState.at(getZeroPosition()) = currentState.at(getZeroPosition() + 1);
-            currentState.at(getZeroPosition() + 1) = temp;
+            int zeroFormerPosition = getZeroPosition();
+            int temp = currentState.at(zeroFormerPosition);
+            currentState.at(zeroFormerPosition) = currentState.at(zeroFormerPosition + 1);
+            currentState.at(zeroFormerPosition + 1) = temp;
         }
     }
 
     void EightPuzzle::move_up() {
-        if (getZeroPosition() == 0 || getZeroPosition() == 1 || getZeroPosition() == 2) {
-            cout << "Invalid move\n\n";
+        int zeroPosition = getZeroPosition();
+
+        if (zeroPosition == 0 || zeroPosition == 1 || zeroPosition == 2) {
+            cout << "**Invalid move**\n\n";
         }
         else {
-            int temp = currentState.at(getZeroPosition());
-            currentState.at(getZeroPosition()) = currentState.at(getZeroPosition() - 3);
-            currentState.at(getZeroPosition() - 3) = temp;
+            int zeroFormerPosition = getZeroPosition();
+            int temp = currentState.at(zeroFormerPosition);
+            currentState.at(zeroFormerPosition) = currentState.at(zeroFormerPosition - 3);
+            currentState.at(zeroFormerPosition - 3) = temp;
         }
     }
 
     void EightPuzzle::move_down() {
-        if (getZeroPosition() == 6 || getZeroPosition() == 7 || getZeroPosition() == 8) {
-            cout << "Invalid move\n\n";
+        int zeroPosition = getZeroPosition();
+
+        if (zeroPosition == 6 || zeroPosition == 7 || zeroPosition == 8) {
+            cout << "**Invalid move**\n\n";
         }
         else {
-            int temp = currentState.at(getZeroPosition());
-            currentState.at(getZeroPosition()) = currentState.at(getZeroPosition() + 3);
-            currentState.at(getZeroPosition() + 3) = temp;
+            int zeroFormerPosition = getZeroPosition();
+            int temp = currentState.at(zeroFormerPosition);
+            currentState.at(zeroFormerPosition) = currentState.at(zeroFormerPosition + 3);
+            currentState.at(zeroFormerPosition + 3) = temp;
         }
     }
 
@@ -69,15 +81,16 @@
 
             cout << currentState.at(i) << " ";
         }
+        cout << "\n\n";
     }
 
 /* Prints whether current state is goal state */
     void EightPuzzle::outputCurrentStateStatus() {
         if (isGoalState()) {
-            cout << "\n***SOLVED***\n";
+            cout << "\n***SOLVED***\n\n";
         }
         else {
-            cout << "\n***NOT SOLVED***\n";
+            cout << "\n***NOT SOLVED***\n\n";
         }
     }
 
@@ -98,5 +111,6 @@
                 return i;
             }
         }
-        return 1;
+        cout << "***ERROR: '0' NOT FOUND***\n\n";
+        return -1;  // This just ensures you get an out_of_range error
     }
