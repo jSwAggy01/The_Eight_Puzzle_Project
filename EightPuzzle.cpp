@@ -17,7 +17,8 @@
         int zeroPosition = getZeroPosition();
 
         if (zeroPosition == 0 || zeroPosition == 3 || zeroPosition == 7) {
-            cout << "**Invalid move**\n\n";
+            cout << "\n**Invalid move**\n\n";
+            invalidMove = true;
         }
         else {
             int zeroFormerPosition = getZeroPosition();
@@ -31,7 +32,8 @@
         int zeroPosition = getZeroPosition();
 
         if (zeroPosition == 2 || zeroPosition == 5 || zeroPosition == 8) {
-            cout << "**Invalid move**\n\n";
+            cout << "\n**Invalid move**\n\n";
+            invalidMove = true;
         }
         else {
             int zeroFormerPosition = getZeroPosition();
@@ -45,7 +47,8 @@
         int zeroPosition = getZeroPosition();
 
         if (zeroPosition == 0 || zeroPosition == 1 || zeroPosition == 2) {
-            cout << "**Invalid move**\n\n";
+            cout << "\n**Invalid move**\n\n";
+            invalidMove = true;
         }
         else {
             int zeroFormerPosition = getZeroPosition();
@@ -59,7 +62,8 @@
         int zeroPosition = getZeroPosition();
 
         if (zeroPosition == 6 || zeroPosition == 7 || zeroPosition == 8) {
-            cout << "**Invalid move**\n\n";
+            cout << "\n**Invalid move**\n\n";
+            invalidMove = true;
         }
         else {
             int zeroFormerPosition = getZeroPosition();
@@ -104,6 +108,14 @@
         return true;
     }
 
+/* Public helper function that will check whether the chosen move was invalid */
+    bool EightPuzzle::isInvalidMove() {
+        if (invalidMove) {
+            return true;
+        }
+        return false;
+    }
+
 /* Private helper function that returns location of 0 */
     int EightPuzzle::getZeroPosition() {
         for (int i = 0; i < currentState.size(); ++i) {
@@ -113,4 +125,14 @@
         }
         cout << "***ERROR: '0' NOT FOUND***\n\n";
         return -1;  // This just ensures you get an out_of_range error
+    }
+
+// NOT A PART OF THE CLASS: Function that will check whether current state is goal state
+    bool isGoalState(vector<int> state) {
+        for (int i = 0; i < 8; ++i) {
+            if (state.at(i) != i + 1) {
+                return false;
+            }
+        }
+        return true;
     }
