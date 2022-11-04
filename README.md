@@ -11,7 +11,7 @@ Think of <a11,a12,a13,a21,a22,a23,a31,a32,a33> as being represented by a 3x3 mat
         a21 a22 a23     =>      4   5   6
         a31 a32 a33             7   8   0
 
-   **Rememeber that the indices go from (0-8) for a 3x3 puzzle
+   **Remember that the indices go from (0-8) for a 3x3 puzzle
 
 
 The operators will be to move 0:
