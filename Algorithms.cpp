@@ -79,7 +79,7 @@
 
         /* Push into it the initial state */
         QUEUEING_FUNCTION.currentStates.push_back(problem.currentState);
-
+        // ***LEFT OFF HERE***
     }
 
     /* A* with Manhatten heuristic */
