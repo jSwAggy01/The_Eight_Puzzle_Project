@@ -11,8 +11,6 @@ class EightPuzzle {
         vector<int> currentState = vector<int>();
         int heuristic = 0;  // How far the current state is from the goal state
     private:
-        
-        const int PUZZLE_SIZE = 9;
         bool invalidMove = false;
     public:
     /* Constructors */
@@ -37,6 +35,9 @@ class EightPuzzle {
         bool isGoalState();
     /* Public helper function that will check whether the chosen move was invalid */
         bool isInvalidMove();
+
+    /* Public helper function that returns the location of specified number from the goal state */
+        int getNumberPosition(int num);  
     private:
     /* Private helper function that returns the location of 0 */
         int getZeroPosition();  

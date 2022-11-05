@@ -116,6 +116,21 @@
         return false;
     }
 
+/* Public helper function that returns the index of where specified number is supposed to be */
+    int EightPuzzle::getNumberPosition(int num) {
+        int correctElement = 0;
+
+        for (int i = 0; i < 8; ++i) {
+            correctElement = i + 1;
+            if (correctElement == num) {
+                return i;
+            }
+        }
+
+        cout << "***ERROR: '" << num << "' NOT FOUND***\n\n";
+        return -1;  // This just ensures you get an out_of_range error
+    }
+
 /* Private helper function that returns location of 0 */
     int EightPuzzle::getZeroPosition() {
         for (int i = 0; i < currentState.size(); ++i) {

@@ -9,7 +9,8 @@ using namespace std;
 int main() {
 
     cout << "\nBEGINNING TESTS...\n\n";
-
+    /* Uncomment to test functions: */
+    
     // cout << "Testing constructors, output function, puzzle status, and operators\n\n";
     // {
     //     cout << "EXAMPLE #1:\n";
